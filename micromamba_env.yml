@@ -1,7 +1,0 @@
-prefix: ./menv
-channels:
-  - conda-forge
-dependencies:
-  - python=3.11
-  - pip
-  - poetry=1.7.1

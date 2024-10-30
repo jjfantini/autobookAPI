@@ -4,14 +4,14 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "package_name": "humblapi",
-      "package_description": "A lightweight Fast API app to connect humnlDATA and humblFINANCE",
-      "package_url": "https://github.com/humblFINANCE/humblFINANCE-api",
+      "package_name": "autobookAPI",
+      "package_description": "A lightweight Fast API app to connect autobook-frontend and autobookAPI  logic",
+      "package_url": "https://github.com/jjfantini/autobookAPI",
       "author_name": "Jennings Fantini",
       "author_email": "jenningsfantini@gmail.com",
       "github_username": "jjfantini",
-      "python_version": "3.11",
-      "docker_image": "python:3.11-slim",
+      "python_version": "3.12",
+      "docker_image": "python:3.12-slim",
       "development_environment": "strict",
       "with_conventional_commits": "1",
       "with_micromamba": "0",
@@ -27,8 +27,8 @@
       "docstring_style": "NumPy",
       "private_package_repository_name": "",
       "private_package_repository_url": "",
-      "__package_name_kebab_case": "humblapi",
-      "__package_name_snake_case": "humblapi",
+      "__package_name_kebab_case": "autobookAPI",
+      "__package_name_snake_case": "autobookAPI",
       "_template": "https://github.com/humblFINANCE/cookiecutter-python"
     }
   },

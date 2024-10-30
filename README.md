@@ -6,11 +6,10 @@ humblFINANCE Backend is a FastAPI-based backend service for the humblFINANCE web
 
 ## 🛠️ Tech Stack
 
-- 🐍 Python 3.11
+- 🐍 Python 3.12
 - 🚀 FastAPI
 - 🗃️ SQLModel (ORM)
 - 🔄 Alembic (Database migrations)
-- 📊 humbldata (Custom data library)
 - 🏗️ Poetry (Dependency management)
 - 🐳 Docker (Containerization)
 
@@ -25,7 +24,7 @@ humblFINANCE Backend is a FastAPI-based backend service for the humblFINANCE web
 
 1. Clone the repository
    ```
-   git clone https://github.com/humblfinance/humblfinance-backend.git
+   git clone https://github.com/jjfantini/autobookAPI.git
    ```
 2. Install dependencies:
    ```
@@ -37,8 +36,8 @@ humblFINANCE Backend is a FastAPI-based backend service for the humblFINANCE web
    ```
 4. Build and run the Docker container:
    ```
-   docker build -t humblfinance-api .
-   docker run -p 8080:8080 humblfinance-api
+   docker build -t autobookAPI .
+   docker run -p 8080:8080 autobookAPI
    ```
 5. Alternatively, run the application directly:
    ```
