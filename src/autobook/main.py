@@ -16,11 +16,11 @@ from fastapi_limiter.depends import RateLimiter
 from redis import asyncio as aioredis
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from humblapi.api.v1.routers import core
-from humblapi.core.config import config
-from humblapi.core.env import Env
-from humblapi.core.logger import setup_logger
-from humblapi.core.middleware import TimeLogMiddleware
+from autobook.api.v1.routers import core
+from autobook.core.config import config
+from autobook.core.env import Env
+from autobook.core.logger import setup_logger
+from autobook.core.middleware import TimeLogMiddleware
 
 env = Env()
 logger = setup_logger("humblAPI Lifespan", level=env.LOGGER_LEVEL)

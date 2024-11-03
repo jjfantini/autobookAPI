@@ -1,8 +1,8 @@
 """Test humblapi."""
 
-import humblapi
+import autobook
 
 
 def test_import() -> None:
     """Test that the package can be imported."""
-    assert isinstance(humblapi.__name__, str)
+    assert isinstance(autobook.__name__, str)

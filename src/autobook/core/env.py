@@ -4,7 +4,7 @@ from typing import Dict, Optional
 
 import dotenv
 
-from humblapi.core.standard_models.abstract.singleton import SingletonMeta
+from autobook.core.standard_models.abstract.singleton import SingletonMeta
 
 
 class Env(metaclass=SingletonMeta):
@@ -68,10 +68,14 @@ class Env(metaclass=SingletonMeta):
 
         Returns
         -------
-        bool
             True if the environment is development, False otherwise.
         """
         return self.ENV.lower() == "dev"
+
+    @property
+    def OPENAI_API_KEY(self) -> str | None:  # noqa: N802
+        """OpenAI API key."""
+        return self._environ.get("OPENAI_API_KEY", None)
 
     # Use this when you want a variable to return a bool
     @staticmethod

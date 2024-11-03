@@ -3,8 +3,8 @@ import time
 
 from fastapi import Request
 
-from humblapi.core.env import Env
-from humblapi.core.logger import setup_logger
+from autobook.core.env import Env
+from autobook.core.logger import setup_logger
 
 env = Env()
 logger = setup_logger("humblAPI Middleware", level=env.LOGGER_LEVEL)

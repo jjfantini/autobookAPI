@@ -4,9 +4,9 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry]  # https://python-poetry.org/docs/pyproject/
-name = "humblapi"
-version = "0.12.0"
-description = "A lightweight Fast API app to connect humnlDATA and humblFINANCE"
+name = "autobook"
+version = "0.1.0"
+description = "A lightweight Fast API app to connect autobook and humblFINANCE"
 authors = ["Jennings Fantini <jenningsfantini@gmail.com>"]
 readme = "README.md"
 repository = "https://github.com/humblFINANCE/humblFINANCE-api"
@@ -62,6 +62,17 @@ fastapi-cache2 = "^0.2.2"
 redis = "^5.0.7"
 orjson = "^3.10.6"
 fastapi-limiter = "^0.1.6"
+grab-fork-from-libgen = "^3.5.0"
+pandas = "^2.2.3"
+pandera = "^0.20.4"
+ffmpeg = "^1.4"
+podcastfy = "^0.2.18"
+requests = "^2.32.3"
+beautifulsoup4 = "^4.12.3"
+youtube-transcript-api = "^0.6.2"
+pymupdf = "^1.24.13"
+openai = "^1.53.0"
+ffprobe = "^0.5"
 
 [tool.poetry.group.test.dependencies]  # https://python-poetry.org/docs/master/managing-dependencies/
 commitizen = ">=3.2.1"
@@ -83,6 +94,8 @@ pytest-asyncio = "^0.23.8"
 cruft = ">=2.14.0"
 jupyterlab = ">=3.6.3"
 pdoc = ">=14.4.0"
+gradio-client = "^1.4.2"
+ffprobe = "^0.5"
 
 [tool.coverage.report]  # https://coverage.readthedocs.io/en/latest/config.html#report
 fail_under = 50

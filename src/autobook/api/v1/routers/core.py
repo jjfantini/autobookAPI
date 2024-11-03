@@ -6,10 +6,10 @@ from fastapi_cache.decorator import cache
 from fastapi_limiter.depends import RateLimiter
 from redis import asyncio as aioredis
 
-from humblapi.core.config import config
-from humblapi.core.logger import setup_logger
-from humblapi.core.standard_models.abstract.responses import HumblResponse
-from humblapi.core.utils import raise_http_exception, redis_delete_pattern
+from autobook.core.config import config
+from autobook.core.logger import setup_logger
+from autobook.core.standard_models.abstract.responses import HumblResponse
+from autobook.core.utils import raise_http_exception, redis_delete_pattern
 
 router = APIRouter(
     prefix=config.API_V1_STR,

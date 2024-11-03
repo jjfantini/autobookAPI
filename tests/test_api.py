@@ -3,7 +3,7 @@
 import httpx
 from fastapi.testclient import TestClient
 
-from humblapi.main import app
+from autobook.main import app
 
 client = TestClient(app)
 
