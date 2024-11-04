@@ -88,7 +88,11 @@ middleware = TimeLogMiddleware(some_attribute="some_attribute_here_if_needed")
 app.add_middleware(BaseHTTPMiddleware, dispatch=middleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=[
+        "http://localhost:3000",
+        "https://auto-book-ai.com",
+        "https://api.auto-book-ai.com",
+    ],
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
