@@ -1,1 +1,1 @@
-"""humblapi package."""
+"""autobook package."""

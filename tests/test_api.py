@@ -1,4 +1,4 @@
-"""Test humblapi REST API."""
+"""Test autobook REST API."""
 
 import httpx
 from fastapi.testclient import TestClient

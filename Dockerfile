@@ -46,5 +46,5 @@ RUN python -m venv venv
 RUN venv/bin/pip install wheels/* --no-deps --no-index
 
 EXPOSE 8080
-ENTRYPOINT ["venv/bin/uvicorn", "humblapi.main:app"]
+ENTRYPOINT ["venv/bin/uvicorn", "autobook.main:app"]
 CMD ["--host", "0.0.0.0", "--port", "8080"]

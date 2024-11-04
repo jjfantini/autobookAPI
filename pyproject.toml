@@ -73,6 +73,7 @@ youtube-transcript-api = "^0.6.2"
 pymupdf = "^1.24.13"
 openai = "^1.53.0"
 ffprobe = "^0.5"
+pydantic = "^2.9.2"
 
 [tool.poetry.group.test.dependencies]  # https://python-poetry.org/docs/master/managing-dependencies/
 commitizen = ">=3.2.1"
@@ -132,7 +133,7 @@ warn_required_dynamic_aliases = true
 warn_untyped_fields = true
 
 [tool.pytest.ini_options]  # https://docs.pytest.org/en/latest/reference/reference.html#ini-options-ref
-addopts = "--color=yes --doctest-modules --exitfirst --failed-first --strict-config --strict-markers --typeguard-packages=humblapi --verbosity=2 --junitxml=reports/pytest.xml"
+addopts = "--color=yes --doctest-modules --exitfirst --failed-first --strict-config --strict-markers --typeguard-packages=autobook --verbosity=2 --junitxml=reports/pytest.xml"
 filterwarnings = ["error", "ignore::DeprecationWarning"]
 testpaths = ["src", "tests"]
 xfail_strict = true
@@ -167,7 +168,7 @@ convention = "numpy"
         --host $host \
         --port $port \
         --reload \
-        humblapi.api:app
+        autobook.api:app
     } else {
       gunicorn \
         --access-logfile - \
@@ -179,7 +180,7 @@ convention = "numpy"
         --worker-class uvicorn.workers.UvicornWorker \
         --worker-tmp-dir /dev/shm \
         --workers 2 \
-        humblapi.api:app
+        autobook.api:app
     } fi
     """
 

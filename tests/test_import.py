@@ -1,4 +1,4 @@
-"""Test humblapi."""
+"""Test autobook."""
 
 import autobook
 

@@ -7,7 +7,7 @@ from autobook.core.env import Env
 from autobook.core.logger import setup_logger
 
 env = Env()
-logger = setup_logger("humblAPI Middleware", level=env.LOGGER_LEVEL)
+logger = setup_logger("AutoBook Middleware", level=env.LOGGER_LEVEL)
 
 
 class TimeLogMiddleware:

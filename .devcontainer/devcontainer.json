@@ -1,5 +1,5 @@
 {
-    "name": "humblapi",
+    "name": "autobook",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "devcontainer",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/",
@@ -50,7 +50,7 @@
                 ],
                 "files.autoSave": "onFocusChange",
                 "mypy-type-checker.importStrategy": "fromEnvironment",
-                "python.defaultInterpreterPath": "/opt/humblapi-env/bin/python",
+                "python.defaultInterpreterPath": "/opt/autobook-env/bin/python",
                 "python.terminal.activateEnvironment": false,
                 "python.testing.pytestEnabled": true,
                 "ruff.importStrategy": "fromEnvironment",

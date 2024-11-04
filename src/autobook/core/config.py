@@ -41,7 +41,7 @@ class Config(BaseSettings):
         The port number for the Redis connection.
     """
 
-    PROJECT_NAME: str = "humblFINANCE FastAPI Backend"
+    PROJECT_NAME: str = "Autobook AI FastAPI Backend"
 
     DB_ENGINE: str | None = os.getenv("DB_ENGINE", None)
     DB_USERNAME: str | None = os.getenv("DB_USERNAME", None)

@@ -1,1 +1,1 @@
-"""humblapi test suite."""
+"""autobook test suite."""

@@ -1,4 +1,4 @@
-"""humblapi REST API."""
+"""autobook REST API."""
 
 import logging
 from contextlib import asynccontextmanager
@@ -16,14 +16,14 @@ from fastapi_limiter.depends import RateLimiter
 from redis import asyncio as aioredis
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from autobook.api.v1.routers import core
+from autobook.api.v1.routers import core, podcast
 from autobook.core.config import config
 from autobook.core.env import Env
 from autobook.core.logger import setup_logger
 from autobook.core.middleware import TimeLogMiddleware
 
 env = Env()
-logger = setup_logger("humblAPI Lifespan", level=env.LOGGER_LEVEL)
+logger = setup_logger("autobook Lifespan", level=env.LOGGER_LEVEL)
 
 
 @asynccontextmanager
@@ -98,3 +98,4 @@ app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 # Add Routers
 app.include_router(core.router)
+app.include_router(podcast.router)

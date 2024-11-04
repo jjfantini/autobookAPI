@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query, Depends
+from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.routing import APIRouter
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
@@ -15,7 +15,7 @@ router = APIRouter(
     prefix=config.API_V1_STR,
     tags=["core"],
 )
-logger = setup_logger(name="humblapi.api.v1.routers.core")
+logger = setup_logger(name="autobook.api.v1.routers.core")
 
 
 @router.get(
@@ -28,7 +28,7 @@ async def read_root() -> HumblResponse[None]:
     """Read root."""
     return HumblResponse(
         response_data=None,
-        message="Welcome to the humblapi API",
+        message="Welcome to the autobook API",
         status_code=200,
     )
 
@@ -46,7 +46,7 @@ async def health_check() -> HumblResponse[None]:
     return HumblResponse(
         response_data=None,
         status_code=200,
-        message="humblAPI is HEALTHY",
+        message="autobook is HEALTHY",
     )
 
 
@@ -129,16 +129,15 @@ async def flush_redis(
                     message="FastAPI cache was flushed successfully.",
                     status_code=200,
                 )
-            else:
-                records = await redis.dbsize()
-                await redis.flushdb()
-                return HumblResponse(
-                    response_data={
-                        "records_deleted": records,
-                    },
-                    message="Redis database flushed successfully.",
-                    status_code=200,
-                )
+            records = await redis.dbsize()
+            await redis.flushdb()
+            return HumblResponse(
+                response_data={
+                    "records_deleted": records,
+                },
+                message="Redis database flushed successfully.",
+                status_code=200,
+            )
         raise_http_exception(500, "Redis backend not found")
     except Exception as e:
         raise_http_exception(500, f"Error flushing Redis: {e!s}")
