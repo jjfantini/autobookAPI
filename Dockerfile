@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     libsoup2.4-dev \
     libjavascriptcoregtk-4.0-dev \
     libwebkit2gtk-4.0-dev \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Install poetry and add it to PATH
@@ -21,7 +22,6 @@ ENV PATH="/root/.local/bin:$PATH"
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
-
 
 COPY src src
 COPY pyproject.toml poetry.lock* README.md ./
@@ -34,6 +34,11 @@ RUN mv dist/* wheels
 FROM python:3.12-slim
 
 WORKDIR /app
+
+# Install ffmpeg in the runtime image
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy dependencies from the previous stage
 COPY --from=build /build/wheels /app/wheels
