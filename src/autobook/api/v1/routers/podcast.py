@@ -18,7 +18,7 @@ podcast_generator = PodcastGenerator()
 
 class PodcastGenerationRequest(BaseModel):
     style: ConversationStyle
-    urls: list[HttpUrl] | None = None
+    urls: list[str] | None = None
     text: str | None = None
     custom_config: dict | None = None
     tts_model: str = "openai"
